@@ -1,4 +1,5 @@
 import Container from '@/components/common/Container';
+import Education from '@/components/landing/Education';
 import Experience from '@/components/landing/Experience';
 import Github from '@/components/landing/Github';
 import Hero from '@/components/landing/Hero';
@@ -10,6 +11,7 @@ export default function Home() {
     <Container className="flex flex-col gap-14 pb-6">
       <Hero />
       <Experience />
+      <Education />
       <Projects />
       <Stack />
       <Github />

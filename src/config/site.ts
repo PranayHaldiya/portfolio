@@ -61,6 +61,7 @@ export const socials = [
 
 export type Experience = {
   company: string;
+  logo: string;
   companyNote?: string;
   href?: string;
   role: string;
@@ -74,6 +75,7 @@ export type Experience = {
 export const experience: Experience[] = [
   {
     company: 'Roger AI',
+    logo: '/logos/roger.jpg',
     companyNote: 'YC S24',
     href: 'https://hireroger.com',
     role: 'Software Engineer',
@@ -105,6 +107,7 @@ export const experience: Experience[] = [
   },
   {
     company: 'Metaverse Ventures',
+    logo: '/logos/m0.jpg',
     role: 'Full Stack Developer',
     start: 'May 2025',
     end: 'Mar 2026',
@@ -126,11 +129,15 @@ export const experience: Experience[] = [
       'langgraph',
       'mastra',
       'evm',
+      'wagmi',
+      'viem',
+      'solana',
       'posthog',
     ],
   },
   {
     company: 'Logics PowerAMR',
+    logo: '/logos/logics.jpg',
     role: 'Software Developer Intern',
     start: 'Dec 2024',
     end: 'Feb 2025',
@@ -139,6 +146,31 @@ export const experience: Experience[] = [
       'Built MERN energy-monitoring dashboards for 100+ concurrent users, and Node.js/MQTT APIs that store real-time telemetry from 500+ IoT devices in MongoDB time-series collections.',
     ],
     stack: ['mongodb', 'express', 'react', 'nodejs', 'mqtt'],
+  },
+];
+
+export type Education = {
+  school: string;
+  logo: string;
+  detail: string;
+  start: string;
+  end: string;
+};
+
+export const education: Education[] = [
+  {
+    school: 'Amity University Rajasthan, Jaipur',
+    logo: '/logos/amity.jpg',
+    detail: 'B.Tech in Computer Science · CGPA 8.2/10',
+    start: '2021',
+    end: '2025',
+  },
+  {
+    school: 'Central Academy',
+    logo: '/logos/central-academy.jpg',
+    detail: 'Class 12 (CBSE) 94.2% · Class 10 91.8%',
+    start: '2007',
+    end: '2021',
   },
 ];
 

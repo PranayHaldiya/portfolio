@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { experience } from '@/config/site';
 
 import { TechTile } from '../common/Tech';
@@ -14,27 +16,30 @@ export default function Experience() {
             open={job === experience[0]}
           >
             <summary className="flex cursor-pointer list-none items-start justify-between gap-4 [&::-webkit-details-marker]:hidden">
-              <div className="min-w-0">
-                <p className="flex flex-wrap items-center gap-2 font-medium">
-                  {job.href ? (
-                    <a
-                      href={job.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:underline hover:underline-offset-4"
-                    >
-                      {job.company}
-                    </a>
-                  ) : (
-                    job.company
-                  )}
-                  {job.companyNote && (
-                    <span className="rounded-md bg-orange-500/10 px-1.5 py-0.5 text-xs font-normal text-orange-600 dark:text-orange-400">
-                      {job.companyNote}
-                    </span>
-                  )}
-                </p>
-                <p className="text-muted-foreground text-sm">{job.role}</p>
+              <div className="flex min-w-0 items-center gap-3">
+                <Logo src={job.logo} alt={job.company} />
+                <div className="min-w-0">
+                  <p className="flex flex-wrap items-center gap-2 font-medium">
+                    {job.href ? (
+                      <a
+                        href={job.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline hover:underline-offset-4"
+                      >
+                        {job.company}
+                      </a>
+                    ) : (
+                      job.company
+                    )}
+                    {job.companyNote && (
+                      <span className="rounded-md bg-orange-500/10 px-1.5 py-0.5 text-xs font-normal text-orange-600 dark:text-orange-400">
+                        {job.companyNote}
+                      </span>
+                    )}
+                  </p>
+                  <p className="text-muted-foreground text-sm">{job.role}</p>
+                </div>
               </div>
               <div className="text-muted-foreground flex shrink-0 items-start gap-2 text-right text-sm">
                 <div>
@@ -69,9 +74,20 @@ export default function Experience() {
         ))}
       </div>
       <p className="text-muted-foreground mt-2 text-xs">
-        Tap a role for details. B.Tech in Computer Science, Amity University
-        Jaipur, 2021–2025.
+        Tap a role for details.
       </p>
     </section>
+  );
+}
+
+export function Logo({ src, alt }: { src: string; alt: string }) {
+  return (
+    <Image
+      src={src}
+      alt={`${alt} logo`}
+      width={80}
+      height={80}
+      className="size-10 shrink-0 rounded-full border bg-white object-contain"
+    />
   );
 }
