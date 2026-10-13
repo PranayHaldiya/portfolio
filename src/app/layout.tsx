@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 
 import Footer from '@/components/common/Footer';
 import Navbar from '@/components/common/Navbar';
+import Oneko from '@/components/common/Oneko';
 import { ThemeProvider } from '@/components/common/ThemeProviders';
 import { site } from '@/config/site';
 
@@ -42,7 +43,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="font-hanken-grotesk antialiased">
+      <body className="font-hanken-grotesk overflow-x-clip antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -52,6 +53,7 @@ export default function RootLayout({
           <Navbar />
           <main>{children}</main>
           <Footer />
+          <Oneko />
         </ThemeProvider>
       </body>
     </html>

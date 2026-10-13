@@ -22,7 +22,7 @@ export default function OpengraphImage() {
     >
       <div style={{ fontSize: 72, fontWeight: 700 }}>{site.name}</div>
       <div style={{ fontSize: 36, color: '#a1a1aa', marginTop: 16 }}>
-        {`${site.role} · ${site.focus} · ${site.location}`}
+        {`${site.role} · ${site.location}`}
       </div>
       <div
         style={{

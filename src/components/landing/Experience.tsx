@@ -1,5 +1,7 @@
 import { experience } from '@/config/site';
 
+import { TechTile } from '../common/Tech';
+
 export default function Experience() {
   return (
     <section id="experience" className="scroll-mt-20">
@@ -51,21 +53,18 @@ export default function Experience() {
                 </svg>
               </div>
             </summary>
-            <ul className="text-muted-foreground mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed">
+            <p className="mt-4 text-sm font-medium">Technologies & Tools</p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {job.stack.map((id) => (
+                <TechTile key={id} id={id} />
+              ))}
+            </div>
+            <p className="mt-4 text-sm font-medium">What I&apos;ve done</p>
+            <ul className="text-muted-foreground mt-2 list-disc space-y-2 pl-5 text-sm leading-relaxed">
               {job.points.map((point) => (
                 <li key={point}>{point}</li>
               ))}
             </ul>
-            <p className="mt-3 flex flex-wrap gap-1.5">
-              {job.stack.map((tech) => (
-                <span
-                  key={tech}
-                  className="bg-muted text-muted-foreground rounded-md px-2 py-0.5 text-xs"
-                >
-                  {tech}
-                </span>
-              ))}
-            </p>
           </details>
         ))}
       </div>

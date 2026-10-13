@@ -1,9 +1,10 @@
-// Everything on the site comes from this file.
+// Everything on the site comes from this file and ./tech.tsx.
+import type { TechKey } from './tech';
 
 export const site = {
   name: 'Pranay Haldiya',
   role: 'Software Engineer',
-  focus: 'AI agents',
+  focus: 'Full-stack · AI · Web3',
   location: 'Jaipur, India',
   email: 'pranayhaldiya8127@gmail.com',
   url:
@@ -14,14 +15,39 @@ export const site = {
   avatar: '/avatar.png',
   status: 'Open to remote roles',
   description:
-    'Software engineer in Jaipur, India. I build AI agents for real users: ad agents, an iMessage agent and an MCP server at Roger (YC S24). Open to remote roles.',
-  bio: [
-    'I build AI agents that do real work for real users. At Roger (YC S24) I built Roger Ads, which turns a company’s website into ads and launches them on Meta, and an iMessage agent that reached 630+ users.',
-    'I work mostly in TypeScript and Next.js, and I build on Solana too. Open to remote roles in AI agents, full-stack TypeScript and Web3.',
-  ],
+    'Full-stack software engineer in Jaipur, India. TypeScript and Next.js, AI agents, and Web3 on EVM chains and Solana. Built Roger Ads and an iMessage agent with 630+ users at Roger (YC S24). Open to remote roles.',
   githubUsername: 'PranayHaldiya',
   resume: '/resume.pdf',
 };
+
+// Bio paragraphs. Strings are text; { tech } renders an icon chip.
+export type BioPart = string | { tech: TechKey; label?: string };
+
+export const bio: BioPart[][] = [
+  [
+    'I’m a full-stack software engineer. I build web apps with ',
+    { tech: 'typescript' },
+    ', ',
+    { tech: 'nextjs' },
+    ' and ',
+    { tech: 'postgresql' },
+    ', AI agents with the ',
+    { tech: 'aiSdk', label: 'AI SDK' },
+    ' and ',
+    { tech: 'mcp' },
+    ', and Web3 apps on ',
+    { tech: 'evm', label: 'EVM chains' },
+    ' and ',
+    { tech: 'solana' },
+    '.',
+  ],
+  [
+    'At Roger (YC S24) I built Roger Ads, which turns a company’s website into ads and launches them on Meta, and an iMessage agent that reached 630+ users. Before that I shipped 10+ Web3 dApps and AI platforms at Metaverse Ventures.',
+  ],
+  [
+    'Open to remote software engineering roles: full-stack, backend, AI or Web3.',
+  ],
+];
 
 export const socials = [
   { name: 'GitHub', href: 'https://github.com/PranayHaldiya' },
@@ -42,7 +68,7 @@ export type Experience = {
   end: string;
   location: string;
   points: string[];
-  stack: string[];
+  stack: TechKey[];
 };
 
 export const experience: Experience[] = [
@@ -62,14 +88,19 @@ export const experience: Experience[] = [
       'Built attribution: click-ID capture, server-side conversions to Meta, TikTok, Reddit, LinkedIn and X, and an hourly spend sync that tracked $50K+ in ad spend.',
     ],
     stack: [
-      'TypeScript',
-      'Next.js',
-      'Vercel AI SDK',
-      'BullMQ',
-      'PostgreSQL',
-      'Prisma',
-      'MCP',
+      'typescript',
+      'nextjs',
+      'aiSdk',
+      'claude',
+      'mcp',
+      'bullmq',
+      'postgresql',
+      'prisma',
+      'meta',
       'fal',
+      'elevenlabs',
+      'grafana',
+      'vercel',
     ],
   },
   {
@@ -84,13 +115,18 @@ export const experience: Experience[] = [
       'Moved APIs to tRPC with TanStack Query (about 20% faster client loads) and maintained NestJS and FastAPI services with Redis caching and RAG pipelines.',
     ],
     stack: [
-      'Next.js',
-      'tRPC',
-      'NestJS',
-      'FastAPI',
-      'Redis',
-      'Solidity',
-      'Solana',
+      'nextjs',
+      'tailwind',
+      'trpc',
+      'tanstackQuery',
+      'nestjs',
+      'fastapi',
+      'redis',
+      'langchain',
+      'langgraph',
+      'mastra',
+      'evm',
+      'posthog',
     ],
   },
   {
@@ -102,7 +138,66 @@ export const experience: Experience[] = [
     points: [
       'Built MERN energy-monitoring dashboards for 100+ concurrent users, and Node.js/MQTT APIs that store real-time telemetry from 500+ IoT devices in MongoDB time-series collections.',
     ],
-    stack: ['MongoDB', 'Express', 'React', 'Node.js', 'MQTT'],
+    stack: ['mongodb', 'express', 'react', 'nodejs', 'mqtt'],
+  },
+];
+
+// From the resume's skills section, plus the AI tools used day to day.
+export const stack: { group: string; items: TechKey[] }[] = [
+  {
+    group: 'Languages',
+    items: ['typescript', 'javascript', 'python', 'rust', 'solidity'],
+  },
+  {
+    group: 'Frontend',
+    items: ['react', 'nextjs', 'tailwind', 'shadcn', 'trpc', 'tanstackQuery'],
+  },
+  {
+    group: 'Backend',
+    items: [
+      'nodejs',
+      'express',
+      'nestjs',
+      'fastapi',
+      'bullmq',
+      'redis',
+      'postgresql',
+      'prisma',
+      'mongodb',
+    ],
+  },
+  {
+    group: 'AI tools',
+    items: ['claudeCode', 'codex', 'chatgpt', 'claude', 'cursor', 'gemini'],
+  },
+  {
+    group: 'AI & agents',
+    items: [
+      'aiSdk',
+      'claudeAgentSdk',
+      'mcp',
+      'langchain',
+      'langgraph',
+      'mastra',
+      'openrouter',
+    ],
+  },
+  {
+    group: 'Web3',
+    items: ['evm', 'wagmi', 'viem', 'solana', 'anchor'],
+  },
+  {
+    group: 'Infra',
+    items: [
+      'docker',
+      'kubernetes',
+      'aws',
+      'vercel',
+      'cloudflareWorkers',
+      'githubActions',
+      'grafana',
+      'posthog',
+    ],
   },
 ];
 

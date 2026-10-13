@@ -1,8 +1,9 @@
 import Image from 'next/image';
 
-import { site, socials } from '@/config/site';
+import { bio, site, socials } from '@/config/site';
 
 import CopyEmail from '../common/CopyEmail';
+import { TechChip } from '../common/Tech';
 import Github from '../svgs/Github';
 import LinkedIn from '../svgs/LinkedIn';
 import Mail from '../svgs/Mail';
@@ -48,8 +49,16 @@ export default function Hero() {
       </div>
 
       <div className="text-muted-foreground mt-5 space-y-3 leading-relaxed">
-        {site.bio.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
+        {bio.map((paragraph, i) => (
+          <p key={i} className="leading-8">
+            {paragraph.map((part, j) =>
+              typeof part === 'string' ? (
+                <span key={j}>{part}</span>
+              ) : (
+                <TechChip key={j} id={part.tech} label={part.label} />
+              ),
+            )}
+          </p>
         ))}
       </div>
 
