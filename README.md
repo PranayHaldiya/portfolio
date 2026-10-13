@@ -1,6 +1,6 @@
 # portfolio
 
-My personal site: who I am, where I've worked, and what I've built.
+My personal site, live at [pranayhaldiya.dev](https://pranayhaldiya.dev): who I am, where I've worked, and what I've built.
 
 - Next.js 15 (App Router), Tailwind CSS 4, TypeScript.
 - Every page is static. The GitHub graph refetches once a day and is skipped if the API is down.
@@ -14,7 +14,7 @@ bun dev          # http://localhost:3000
 bun run build
 ```
 
-Set `NEXT_PUBLIC_URL` to the production URL so link previews use the right domain. On Vercel it falls back to the project's production domain.
+`NEXT_PUBLIC_URL` is set to `https://pranayhaldiya.dev` in Vercel's production environment, so link previews and the sitemap use the custom domain. Without it, the site falls back to the project's production domain.
 
 ## Credits
 
