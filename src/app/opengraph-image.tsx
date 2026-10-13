@@ -33,8 +33,8 @@ export default function OpengraphImage() {
           lineHeight: 1.4,
         }}
       >
-        Built Roger Ads, an iMessage agent with 630+ users and an MCP server at
-        Roger (YC S24).
+        Web and mobile apps, backends, AI agents and Web3 (EVM and Solana).
+        Built Roger Ads and an iMessage agent with 630+ users at Roger (YC S24).
       </div>
       <div
         style={{

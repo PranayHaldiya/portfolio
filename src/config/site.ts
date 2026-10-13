@@ -15,7 +15,7 @@ export const site = {
   avatar: '/avatar.png',
   status: 'Open to remote roles',
   description:
-    'Full-stack software engineer in Jaipur, India. TypeScript and Next.js, AI agents, and Web3 on EVM chains and Solana. Built Roger Ads and an iMessage agent with 630+ users at Roger (YC S24). Open to remote roles.',
+    'Full-stack software engineer in Jaipur, India: web and mobile apps, backends, AI agents and Web3 on EVM chains and Solana, in TypeScript, Python, Rust or whatever the codebase uses. Built Roger Ads and an iMessage agent with 630+ users at Roger (YC S24). Open to remote roles.',
   githubUsername: 'PranayHaldiya',
   resume: '/resume.pdf',
 };
@@ -25,21 +25,26 @@ export type BioPart = string | { tech: TechKey; label?: string };
 
 export const bio: BioPart[][] = [
   [
-    'I’m a full-stack software engineer. I build web apps with ',
-    { tech: 'typescript' },
-    ', ',
-    { tech: 'nextjs' },
-    ' and ',
-    { tech: 'postgresql' },
-    ', AI agents with the ',
-    { tech: 'aiSdk', label: 'AI SDK' },
-    ' and ',
-    { tech: 'mcp' },
-    ', and Web3 apps on ',
+    'I’m a full-stack software engineer. I build web and mobile apps, backends, AI agents, and Web3 apps on ',
     { tech: 'evm', label: 'EVM chains' },
     ' and ',
     { tech: 'solana' },
     '.',
+  ],
+  [
+    'I’m not tied to one language. I’ve worked in ',
+    { tech: 'typescript' },
+    ', ',
+    { tech: 'python' },
+    ', ',
+    { tech: 'rust' },
+    ' and ',
+    { tech: 'solidity' },
+    ', and with coding agents like ',
+    { tech: 'claudeCode' },
+    ' and ',
+    { tech: 'codex' },
+    ' I pick up whatever the codebase uses, Go included.',
   ],
   [
     'At Roger (YC S24) I built Roger Ads, which turns a company’s website into ads and launches them on Meta, and an iMessage agent that reached 630+ users. Before that I shipped 10+ Web3 dApps and AI platforms at Metaverse Ventures.',
@@ -181,8 +186,17 @@ export const stack: { group: string; items: TechKey[] }[] = [
     items: ['typescript', 'javascript', 'python', 'rust', 'solidity'],
   },
   {
-    group: 'Frontend',
-    items: ['react', 'nextjs', 'tailwind', 'shadcn', 'trpc', 'tanstackQuery'],
+    group: 'Frontend & mobile',
+    items: [
+      'react',
+      'nextjs',
+      'tailwind',
+      'shadcn',
+      'trpc',
+      'tanstackQuery',
+      'reactNative',
+      'expo',
+    ],
   },
   {
     group: 'Backend',
@@ -267,6 +281,14 @@ export const projects: Project[] = [
     year: '2026',
     github: 'https://github.com/PranayHaldiya/Launch-Studio-AI',
     live: 'https://elevenlabs-starter.pranayhaldiya8127.workers.dev',
+  },
+  {
+    name: 'Clicky',
+    description:
+      'A voice-first AI assistant phone app: hold to talk, share a screenshot of a confusing screen, and get a short spoken answer back. It remembers past conversations. Built for ElevenHacks 4.',
+    tags: ['Expo', 'React Native', 'ElevenLabs', 'Turbopuffer'],
+    year: '2026',
+    github: 'https://github.com/babuClawd/clicky-mobile',
   },
   {
     name: 'PhantomBid',
